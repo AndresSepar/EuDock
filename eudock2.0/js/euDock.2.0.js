@@ -4,7 +4,7 @@
  * Version: 2.0.06
  *
  * Copyright (C) 2006 Parodi (Pier...) Eugenio <eudock@inwind.it>
- *                                              http://eudock.jules.it
+ *                                              https://github.com/ceccopierangiolieugenio/EuDock
  *
  * SPECIAL THANKS TO Tiago D'Herbe (tvidigal) FOR (Multiple Dock) INSPIRATION
  *

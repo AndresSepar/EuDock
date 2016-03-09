@@ -4,7 +4,7 @@
  * euDock 2.0.06 plugin
  *
  * Copyright (C) 2006 Parodi (Pier...) Eugenio <eudock@inwind.it>
- *                                              http://eudock.jules.it
+ *                                              https://github.com/ceccopierangiolieugenio/EuDock
  *
  * This library is free software; you can redistribute it and/or             
  * modify it under the terms of the GNU Lesser General Public                

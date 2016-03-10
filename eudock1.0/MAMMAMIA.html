@@ -1,0 +1,572 @@
+<html>
+<head>
+<title>euDock (Dock Bar MAC OS X-Style) in Javascript WOW!!!</title>
+<link type="image/x-icon" href="iconsEuDock/euDock.ico" rel="shortcut icon">
+<script language="JavaScript1.3" src="euDock.js"></script>
+
+<style>
+body,td { color: #000000;font-family:Verdana,Geneva,Helvetica; font-size: 12px; color:#223232;}
+
+.Titolo { font-family: Arial, Verdana, Sans-serif; font-size:20px; font-weight:bolder; }
+.inputText { border-left: 0px none; border-right: 0px none; border-top: 1px solid #8FA6A6; border-bottom: 1px solid #8FA6A6; }
+</style>
+
+</head>
+<body >
+<center>
+<img src=images/logo-big.jpg>
+
+<table border="0" cellspacing="0" cellpadding="0">
+    <tr><td><img src=images/dockBg-l.png></td>
+    <td background=images/dockBg-c-o.gif class="Titolo">Final euDock properties show (1/2) [PNG]</td>
+    <td><img src=images/dockBg-r.png></td></tr>
+</table>
+
+<br>
+
+<table border=0 cellspacing=0 cellpadding=0><tr><td valign=top>
+<!--INIZIO Menu laterale -->
+    <script>
+        var booleanBar=true;
+
+        preloadImages(new Array('bottoni/b-1-b-c.jpg','bottoni/b-1-b-l.jpg','bottoni/b-1-b-r.jpg',
+                                'bottoni/b-1-r-c.jpg','bottoni/b-1-r-l.jpg','bottoni/b-1-r-r.jpg',
+                                'bottoni/b-1-g-c.jpg','bottoni/b-1-g-l.jpg','bottoni/b-1-g-r.jpg',
+                                'bottoni/b-1-y-c.jpg','bottoni/b-1-y-l.jpg','bottoni/b-1-y-r.jpg'));
+        function top(){
+            euDockAlign("top");
+            if (booleanBar)
+                euBarDef("images/dockBg-l.png","images/dockBg-c-o.gif","images/dockBg-r.png",0,0);
+            else
+                euBarDef("images/formt1l.gif","images/formt1c.gif","images/formt1r.gif",-7,7);
+        }
+        function bottom(){
+            euDockAlign("bottom");
+            if (booleanBar)
+                euBarDef("images/dockBg-l.png","images/dockBg-c-o.gif","images/dockBg-r.png",0,0);
+            else
+                euBarDef("images/formt1l.gif","images/formt1c.gif","images/formt1r.gif",-7,7);
+        }
+        function left(){
+            euDockAlign("left");
+            if (booleanBar)
+                euBarDef("images/dockBg-u.png","images/dockBg-c-v.gif","images/dockBg-d.png",1,0);
+            else
+                euBarDef("images/formt1l-v.gif","images/formt1c-v.gif","images/formt1r-v.gif",-5,7);
+        }
+        function right(){
+            euDockAlign("right");
+             if (booleanBar)
+                euBarDef("images/dockBg-u.png","images/dockBg-c-v.gif","images/dockBg-d.png",1,0);
+            else
+                euBarDef("images/formt1l-v.gif","images/formt1c-v.gif","images/formt1r-v.gif",-5,7);
+
+        }
+        function bar(bool){
+            booleanBar = bool;
+            if (booleanBar)
+                if (getEuDockAlign()=='top' || getEuDockAlign()=='bottom')
+                    euBarDef("images/dockBg-l.png","images/dockBg-c-o.gif","images/dockBg-r.png",0,0);
+                else
+                    euBarDef("images/dockBg-u.png","images/dockBg-c-v.gif","images/dockBg-d.png",1,0);
+            else
+                if (getEuDockAlign()=='top' || getEuDockAlign()=='bottom')
+                    euBarDef("images/formt1l.gif","images/formt1c.gif","images/formt1r.gif",-7,7);
+                else
+                    euBarDef("images/formt1l-v.gif","images/formt1c-v.gif","images/formt1r-v.gif",-5,7);        }
+    </script>
+
+    <table border=0 cellspacing=0  cellpadding=0><tr><td>
+    <div style="cursor:pointer; background: url('bottoni/b-1-g-c.jpg');"
+    onmouseover="this.style.backgroundImage='url(\'bottoni/b-1-y-c.jpg\')';left1.src='bottoni/b-1-y-l.jpg';right1.src='bottoni/b-1-y-r.jpg'"
+    onmouseout="this.style.backgroundImage='url(\'bottoni/b-1-g-c.jpg\')';left1.src='bottoni/b-1-g-l.jpg';right1.src='bottoni/b-1-g-r.jpg'"
+    onclick="top();">
+    <table border=0 cellspacing=0  cellpadding=0><tr>
+    <td><img src=bottoni/b-1-g-l.jpg name='left1'></td>
+    <td style="font-family:Verdana,Geneva,Helvetica; font-size: 12px; color:#223232;"
+    valign=top><img src=images/x.gif height=7><br><b>On the Top</b></td>
+    <td><img src=bottoni/b-1-g-r.jpg name='right1'></td>
+    </tr></table>
+    </div></td></tr></table>
+
+    <table border=0 cellspacing=0  cellpadding=0><tr><td>
+    <div style="cursor:pointer; background: url('bottoni/b-1-g-c.jpg');"
+    onmouseover="this.style.backgroundImage='url(\'bottoni/b-1-y-c.jpg\')';left2.src='bottoni/b-1-y-l.jpg';right2.src='bottoni/b-1-y-r.jpg'"
+    onmouseout="this.style.backgroundImage='url(\'bottoni/b-1-g-c.jpg\')';left2.src='bottoni/b-1-g-l.jpg';right2.src='bottoni/b-1-g-r.jpg'"
+    onclick="bottom();">
+    <table border=0 cellspacing=0  cellpadding=0><tr>
+    <td><img src=bottoni/b-1-g-l.jpg name='left2'></td>
+    <td style="font-family:Verdana,Geneva,Helvetica; font-size: 12px; color:#223232;"
+    valign=top><img src=images/x.gif height=7><br><b>On the Bottom</b></td>
+    <td><img src=bottoni/b-1-g-r.jpg name='right2'></td>
+    </tr></table>
+    </div></td></tr></table>
+
+    <table border=0 cellspacing=0  cellpadding=0><tr><td>
+    <div style="cursor:pointer; background: url('bottoni/b-1-g-c.jpg');"
+    onmouseover="this.style.backgroundImage='url(\'bottoni/b-1-y-c.jpg\')';left3.src='bottoni/b-1-y-l.jpg';right3.src='bottoni/b-1-y-r.jpg'"
+    onmouseout="this.style.backgroundImage='url(\'bottoni/b-1-g-c.jpg\')';left3.src='bottoni/b-1-g-l.jpg';right3.src='bottoni/b-1-g-r.jpg'"
+    onclick="left();">
+    <table border=0 cellspacing=0  cellpadding=0><tr>
+    <td><img src=bottoni/b-1-g-l.jpg name='left3'></td>
+    <td style="font-family:Verdana,Geneva,Helvetica; font-size: 12px; color:#223232;"
+    valign=top><img src=images/x.gif height=7><br><b>On the Left</b></td>
+    <td><img src=bottoni/b-1-g-r.jpg name='right3'></td>
+    </tr></table>
+    </div></td></tr></table>
+
+    <table border=0 cellspacing=0  cellpadding=0><tr><td>
+    <div style="cursor:pointer; background: url('bottoni/b-1-g-c.jpg');"
+    onmouseover="this.style.backgroundImage='url(\'bottoni/b-1-y-c.jpg\')';left4.src='bottoni/b-1-y-l.jpg';right4.src='bottoni/b-1-y-r.jpg'"
+    onmouseout="this.style.backgroundImage='url(\'bottoni/b-1-g-c.jpg\')';left4.src='bottoni/b-1-g-l.jpg';right4.src='bottoni/b-1-g-r.jpg'"
+    onclick="right();">
+    <table border=0 cellspacing=0  cellpadding=0><tr>
+    <td><img src=bottoni/b-1-g-l.jpg name='left4'></td>
+    <td style="font-family:Verdana,Geneva,Helvetica; font-size: 12px; color:#223232;"
+    valign=top><img src=images/x.gif height=7><br><b>On the Right</b></td>
+    <td><img src=bottoni/b-1-g-r.jpg name='right4'></td>
+    </tr></table>
+    </div></td></tr></table>
+
+    <table border=0 cellspacing=0  cellpadding=0><tr><td>
+    <div style="cursor:pointer; background: url('bottoni/b-1-g-c.jpg');"
+    onmouseover="this.style.backgroundImage='url(\'bottoni/b-1-r-c.jpg\')';left5.src='bottoni/b-1-r-l.jpg';right5.src='bottoni/b-1-r-r.jpg'"
+    onmouseout="this.style.backgroundImage='url(\'bottoni/b-1-g-c.jpg\')';left5.src='bottoni/b-1-g-l.jpg';right5.src='bottoni/b-1-g-r.jpg'"
+    onclick="setEuDockSteps(new Array(0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95,1))">
+    <table border=0 cellspacing=0  cellpadding=0><tr>
+    <td><img src=bottoni/b-1-g-l.jpg name='left5'></td>
+    <td style="font-family:Verdana,Geneva,Helvetica; font-size: 12px; color:#223232;"
+    valign=top><img src=images/x.gif height=7><br><b>KeyframesNEW</b></td>
+    <td><img src=bottoni/b-1-g-r.jpg name='right5'></td>
+    </tr></table>
+    </div></td></tr></table>
+
+    <table border=0 cellspacing=0  cellpadding=0><tr><td>
+    <div style="cursor:pointer; background: url('bottoni/b-1-g-c.jpg');"
+    onmouseover="this.style.backgroundImage='url(\'bottoni/b-1-r-c.jpg\')';left6.src='bottoni/b-1-r-l.jpg';right6.src='bottoni/b-1-r-r.jpg'"
+    onmouseout="this.style.backgroundImage='url(\'bottoni/b-1-g-c.jpg\')';left6.src='bottoni/b-1-g-l.jpg';right6.src='bottoni/b-1-g-r.jpg'"
+    onclick="setEuDockSteps(new Array(0.3,0.4,0.5,0.6,0.7,0.8,0.9,1));">
+    <table border=0 cellspacing=0  cellpadding=0><tr>
+    <td><img src=bottoni/b-1-g-l.jpg name='left6'></td>
+    <td style="font-family:Verdana,Geneva,Helvetica; font-size: 12px; color:#223232;"
+    valign=top><img src=images/x.gif height=7><br><b>KeyframesOLD</b></td>
+    <td><img src=bottoni/b-1-g-r.jpg name='right6'></td>
+    </tr></table>
+    </div></td></tr></table>
+
+    <table border=0 cellspacing=0  cellpadding=0><tr><td>
+    <div style="cursor:pointer; background: url('bottoni/b-1-g-c.jpg');"
+    onmouseover="this.style.backgroundImage='url(\'bottoni/b-1-r-c.jpg\')';left7.src='bottoni/b-1-r-l.jpg';right7.src='bottoni/b-1-r-r.jpg'"
+    onmouseout="this.style.backgroundImage='url(\'bottoni/b-1-g-c.jpg\')';left7.src='bottoni/b-1-g-l.jpg';right7.src='bottoni/b-1-g-r.jpg'"
+    onclick="setEuDockSteps(new Array(0.3,0.27,0.25,0.27,0.3,0.35,0.4,0.5,0.65,0.8,1,1.3,1.2,1.1,1));">
+    <table border=0 cellspacing=0  cellpadding=0><tr>
+    <td><img src=bottoni/b-1-g-l.jpg name='left7'></td>
+    <td style="font-family:Verdana,Geneva,Helvetica; font-size: 12px; color:#223232;"
+    valign=top><img src=images/x.gif height=7><br><b>KeyframesXXX</b></td>
+    <td><img src=bottoni/b-1-g-r.jpg name='right7'></td>
+    </tr></table>
+    </div></td></tr></table>
+
+    <table border=0 cellspacing=0  cellpadding=0><tr><td>
+    <div style="cursor:pointer; background: url('bottoni/b-1-g-c.jpg');"
+    onmouseover="this.style.backgroundImage='url(\'bottoni/b-1-b-c.jpg\')';left8.src='bottoni/b-1-b-l.jpg';right8.src='bottoni/b-1-b-r.jpg'"
+    onmouseout="this.style.backgroundImage='url(\'bottoni/b-1-g-c.jpg\')';left8.src='bottoni/b-1-g-l.jpg';right8.src='bottoni/b-1-g-r.jpg'"
+    onclick="bar(true);">
+    <table border=0 cellspacing=0  cellpadding=0><tr>
+    <td><img src=bottoni/b-1-g-l.jpg name='left8'></td>
+    <td style="font-family:Verdana,Geneva,Helvetica; font-size: 12px; color:#223232;"
+    valign=top><img src=images/x.gif height=7><br><b>ORIGINAL BAR</b></td>
+    <td><img src=bottoni/b-1-g-r.jpg name='right8'></td>
+    </tr></table>
+    </div></td></tr></table>
+
+    <table border=0 cellspacing=0  cellpadding=0><tr><td>
+    <div style="cursor:pointer; background: url('bottoni/b-1-g-c.jpg');"
+    onmouseover="this.style.backgroundImage='url(\'bottoni/b-1-b-c.jpg\')';left9.src='bottoni/b-1-b-l.jpg';right9.src='bottoni/b-1-b-r.jpg'"
+    onmouseout="this.style.backgroundImage='url(\'bottoni/b-1-g-c.jpg\')';left9.src='bottoni/b-1-g-l.jpg';right9.src='bottoni/b-1-g-r.jpg'"
+    onclick="bar(false);">
+    <table border=0 cellspacing=0  cellpadding=0><tr>
+    <td><img src=bottoni/b-1-g-l.jpg name='left9'></td>
+    <td style="font-family:Verdana,Geneva,Helvetica; font-size: 12px; color:#223232;"
+    valign=top><img src=images/x.gif height=7><br><b>NEW BAR</b></td>
+    <td><img src=bottoni/b-1-g-r.jpg name='right9'></td>
+    </tr></table>
+    </div></td></tr></table>
+
+<!--FINE Menu laterale -->
+</td><td>
+<!--INIZIO PARTE CENTRALE -->
+
+<table border=0 cellspacing=0  cellpadding=0>
+    <tr><td width=12><img src=images/formt2l.gif></td>
+    <td background=images/formt1c.gif><Center><b>euDock Specs</b></center></td>
+    <td width=12><img src=images/formt2r.gif></td></tr>
+    <tr><td background=images/forml.gif></td><td>
+
+    <br>
+
+    The last page was unreadable EH?<p>
+    Sorry, i'm not a good webDesigner!!!<p>
+
+    </td><td background=images/formr.gif></td></tr>
+    <tr><td><img src=images/formt1l.gif></td>
+    <td background=images/formt1c.gif><b><center>!!!Some experiments!!!</b></td>
+    <td><img src=images/formt1r.gif></td></tr>
+    <tr><td background=images/forml.gif></td><td>
+
+    <br>
+    <h3>Hook to Objects...</h3>
+    <br>
+        <table border=0 cellspacing=0  cellpadding=10 width=100%>
+        <tr><td><img id='redPepper' src=iconsEuDock/euDock-red.png></td>
+            <td><textarea id="pepperTextArea" rows="3" cols="10" >YEAH... I'm a TextArea</textarea></td>
+            <td><table border=1 id='pepperTable'><td>Wooooo!!!<br>I'm a table</td></table></td>
+            <td><table border=1 ><td>Wooooo!!!<br>I'm a Cell</td><td id='pepperCell'>Wooooo!!!<br>I'm another Cell</td></table></td></tr>
+        <tr><td>Hook to image<br>
+                <a href="javascript:hookEuDock('redPepper','top');">HookTop</a><br>
+                <a href="javascript:hookEuDock('redPepper','bottom');">HookBottom</a><br>
+                <a href="javascript:hookEuDock('redPepper','left');">HookLeft</a><br>
+                <a href="javascript:hookEuDock('redPepper','right');">HookRight</a><p>
+                <a href="javascript:unHookEuDock();">unHook</a><p></td>
+            <td>Hook to TextArea<br>
+                <a href="javascript:hookEuDock('pepperTextArea','top');">HookTop</a><br>
+                <a href="javascript:hookEuDock('pepperTextArea','bottom');">HookBottom</a><br>
+                <a href="javascript:hookEuDock('pepperTextArea','left');">HookLeft</a><br>
+                <a href="javascript:hookEuDock('pepperTextArea','right');">HookRight</a><p>
+                <a href="javascript:unHookEuDock();">unHook</a><p></td></td>
+            <td>Hook to table<br>
+                <a href="javascript:hookEuDock('pepperTable','top');">HookTop</a><br>
+                <a href="javascript:hookEuDock('pepperTable','bottom');">HookBottom</a><br>
+                <a href="javascript:hookEuDock('pepperTable','left');">HookLeft</a><br>
+                <a href="javascript:hookEuDock('pepperTable','right');">HookRight</a><p>
+                <a href="javascript:unHookEuDock();">unHook</a><p></td></td>
+            <td>Hook to another Cell<br>
+                <a href="javascript:hookEuDock('pepperCell','top');">HookTop</a><br>
+                <a href="javascript:hookEuDock('pepperCell','bottom');">HookBottom</a><br>
+                <a href="javascript:hookEuDock('pepperCell','left');">HookLeft</a><br>
+                <a href="javascript:hookEuDock('pepperCell','right');">HookRight</a><p>
+                <a href="javascript:unHookEuDock();">unHook</a><p></td>
+            </tr>
+        </table>
+
+        <b>Source:</b>For the first example (redPepper Image) the Others are the same.
+<pre>
+&lt;a href="javascript:hookEuDock('redPepper','top');"&gt;HookTop&lt;/a&gt;&lt;br&gt;
+&lt;a href="javascript:hookEuDock('redPepper','bottom');"&gt;HookBottom&lt;/a&gt;&lt;br&gt;
+&lt;a href="javascript:hookEuDock('redPepper','left');"&gt;HookLeft&lt;/a&gt;&lt;br&gt;
+&lt;a href="javascript:hookEuDock('redPepper','right');"&gt;HookRight&lt;/a&gt;&lt;p&gt;
+&lt;a href="javascript:unHookEuDock();"&gt;unHook&lt;/a&gt;&lt;p&gt;&lt;/td&gt;
+</pre>
+
+    <hr>
+
+    <br>
+    <h3>Link to EventS...</h3>
+    <br>
+    <b>Source:</b>(Only icon1 has linked some events, try on the dock)
+    <pre>
+var icon1 = addEuImgArray(new Array("iconsEuDock/euDock-red.png",
+                                    "iconsEuDock/E.png",
+                                    "iconsEuDock/u.png",
+                                    "iconsEuDock/D.png",
+                                    "iconsEuDock/o.png",
+                                    "iconsEuDock/c.png",
+                                    "iconsEuDock/k.png",
+                                    "iconsEuDock/euDock-brown.png" ) ,
+                                    "fadingSteps='100' fadingType='transparent'");
+icon1.onChangeImage = "showChangeImages(icon1)";
+icon1.onChangeSize  = "drawSizes(icon1)";
+icon1.onMouseOver   = "showIconState(icon1)";
+icon1.onMouseOut    = "showIconState(icon1)";
+icon1.onMouseClick  = "changeImages(icon1)";
+    </pre><br>
+        <table border=0 cellspacing=0 cellpadding=3 width=100%><tr><td valign=top>
+            <table border=1 cellspacing=0 cellpadding=3>
+            <tr><td colspan=2><b>Link to onChangeImage event<br>(only first icon)</b></td></tr>
+            <tr><td colspan=2>Fading Images</td></tr>
+            <tr><td>Before...</td><td>After...</td></tr>
+            <tr><td><image id='eventImgBefore' src=iconsEuDock/euDock-red.png></td>
+                <td><image id='eventImgAfter' src=iconsEuDock/euDock-red.png></td></tr>
+            <tr><td><b>time: (h:m:s ms)</b></td><td><div id='timeChangeImage'> </div></td></tr>
+            </table>
+        </td><td valign=top>
+        <b>Source:</b>
+        <pre>
+function showChangeImages(image){
+    document.getElementById('eventImgBefore').src = image.getImage();
+    document.getElementById('eventImgAfter').src  = image.getFadingImage();
+    tempo = new Date();
+    document.getElementById('timeChangeImage').innerHTML =
+                                        tempo.getHours()+":"+
+                                        tempo.getMinutes()+":"+
+                                        tempo.getSeconds()+" "+
+                                        tempo.getMilliseconds();
+}
+        </pre>
+        </td></tr>
+        </table>
+
+        <br>
+
+        <table border=0 cellspacing=0 cellpadding=3 width=100%><tr><td valign=top>
+            <table border=1 cellspacing=0 cellpadding=3>
+            <tr><td colspan=2><b>Link to onChangeSize event<br>(only first icon)</b></td></tr>
+            <tr><td>Size:</td><td><div id='sizeDiv'>&nbsp;</div></td></tr>
+            <tr><td><b>time: (h:m:s ms)</b></td><td><div id='timeChangeSize'>&nbsp;</div></td></tr>
+            </table>
+        </td><td valign=top>
+        <b>Source:</b>
+        <pre>
+function drawSizes(image){
+    document.getElementById('sizeDiv').innerHTML=
+                           "&lt;b&gt;Width: &lt;/b&gt;"+image.getWidth()+"&lt;br&gt;"+
+                           "&lt;b&gt;Height: &lt;/b&gt;"+image.getHeight()+"&lt;br&gt;"+
+                           "&lt;b&gt;MaxWidth: &lt;/b&gt;"+image.getMaxWidth()+"&lt;br&gt;"+
+                           "&lt;b&gt;MaxHeight: &lt;/b&gt;"+image.getMaxHeight()+"&lt;br&gt;";
+    tempo = new Date();
+    document.getElementById('timeChangeSize').innerHTML =
+                                        tempo.getHours()+":"+
+                                        tempo.getMinutes()+":"+
+                                        tempo.getSeconds()+" "+
+                                        tempo.getMilliseconds();
+}
+        </pre>
+        </td></tr>
+        </table>
+
+        <br>
+
+        <table border=0 cellspacing=0 cellpadding=3 width=100%><tr><td valign=top>
+            <table border=1 cellspacing=0 cellpadding=3>
+            <tr><td colspan=2><b>Link to onMouseOver,onMouseOut event<br>(only first icon)</b></td></tr>
+            <tr><td>What Image is?</td><td><div id='iconStateDiv'>&nbsp;</div></td></tr>
+            <tr><td><b>time: (h:m:s ms)</b></td><td><div id='timeIconState'>&nbsp;</div></td></tr>
+            </table>
+        </td><td valign=top>
+        <b>Source:</b>
+        <pre>
+function showIconState(image){
+    document.getElementById('iconStateDiv').innerHTML=image.getImage();
+    tempo = new Date();
+    document.getElementById('timeIconState').innerHTML =
+                                        tempo.getHours()+":"+
+                                        tempo.getMinutes()+":"+
+                                        tempo.getSeconds()+" "+
+                                        tempo.getMilliseconds();
+}
+
+        </pre>
+        </td></tr>
+        </table>
+
+        <br>
+
+        <table border=0 cellspacing=0 cellpadding=3 width=100%><tr><td valign=top>
+            <table border=1 cellspacing=0 cellpadding=3>
+            <tr><td colspan=2><b>Link to onMouseClick event<br>(only first icon)</b></td></tr>
+            <tr><td colspan=2>Images cycles between 3 different types for every Click</td></tr>
+            <tr><td><b>time: (h:m:s ms)</b></td><td><div id='timeMouseClick'>&nbsp;</div></td></tr>
+            </table>
+        </td><td valign=top>
+        <b>Source:</b>
+        <pre>
+var booleanExampleChgImage = 0;
+
+function changeImages(image){
+    if (booleanExampleChgImage==0){
+        //
+        //First Image SET
+        //
+        image.setImageArray(new Array("iconsEuDock/euDock-red.png",
+                                      "iconsEuDock/euDock-gold.png",
+                                      "iconsEuDock/euDock-green.png",
+                                      "iconsEuDock/euDock-blue.png",
+                                      "iconsEuDock/euDock-purple.png" ));
+        image.setFadingSteps(15);
+        image.setFadingType('opaque');
+    }else if (booleanExampleChgImage==1){
+        //
+        //Second Image SET
+        //
+        image.setImageArray(new Array("iconsEuDock/euDock-red.png",
+                                      "iconsEuDock/E.png" ));
+        image.setFadingSteps(10);
+        image.setFadingType('fixed');
+    }else{
+        //
+        //Third Image SET
+        //
+        image.setImageArray(new Array("iconsEuDock/euDock-red.png",
+                                      "iconsEuDock/E.png",
+                                      "iconsEuDock/u.png",
+                                      "iconsEuDock/D.png",
+                                      "iconsEuDock/o.png",
+                                      "iconsEuDock/c.png",
+                                      "iconsEuDock/k.png",
+                                      "iconsEuDock/euDock-brown.png" ));
+        image.setFadingSteps(100);
+        image.setFadingType('transparent');
+    }
+
+    booleanExampleChgImage = (booleanExampleChgImage+1)%3;
+
+    tempo = new Date();
+    document.getElementById('timeMouseClick').innerHTML =
+                                        tempo.getHours()+":"+
+                                        tempo.getMinutes()+":"+
+                                        tempo.getSeconds()+" "+
+                                        tempo.getMilliseconds();
+}
+        </pre>
+        </td></tr>
+        </table>
+
+     </td><td background=images/formr.gif></td></tr>
+    <tr><td><img src=images/formt1l.gif></td>
+    <td background=images/formt1c.gif><b><center>!!!Other Functions!!!</b></td>
+    <td><img src=images/formt1r.gif></td></tr>
+    <tr><td background=images/forml.gif></td><td>
+    <br>
+    Shall we go to the <a href='MAMMAMIA2.html'><b>NEXT PAGE...</b></a>
+
+
+    </td><td background=images/formr.gif></td></tr>
+    <tr><td width=12><img src=images/formdl.gif></td><td background=images/formd.gif></td><td width=12><img src=images/formdr.gif></td></tr>
+</table>
+<!-- FINE PARTE CENTRALE -->
+</td></tr>
+</table>
+
+</center>
+<a href='http://eudock.jules.it'>
+<img src='littlEuDock.jpg' border=0></a>
+</body>
+</html>
+
+<script>
+function showChangeImages(image){
+    document.getElementById('eventImgBefore').src = image.getImage();
+    document.getElementById('eventImgAfter').src  = image.getFadingImage();
+    tempo = new Date();
+    document.getElementById('timeChangeImage').innerHTML=(tempo.getHours()+":"+
+                                                          tempo.getMinutes()+":"+
+                                                          tempo.getSeconds()+" "+
+                                                          tempo.getMilliseconds() );
+}
+
+function drawSizes(image){
+    document.getElementById('sizeDiv').innerHTML="<b>Width: </b>"+image.getWidth()+"<br>"+
+                                                 "<b>Height: </b>"+image.getHeight()+"<br>"+
+                                                 "<b>MaxWidth: </b>"+image.getMaxWidth()+"<br>"+
+                                                 "<b>MaxHeight: </b>"+image.getMaxHeight()+"<br>";
+    tempo = new Date();
+    document.getElementById('timeChangeSize').innerHTML=(tempo.getHours()+":"+
+                                                          tempo.getMinutes()+":"+
+                                                          tempo.getSeconds()+" "+
+                                                          tempo.getMilliseconds() );
+}
+
+function showIconState(image){
+    document.getElementById('iconStateDiv').innerHTML=image.getImage();
+    tempo = new Date();
+    document.getElementById('timeIconState').innerHTML=(tempo.getHours()+":"+
+                                                          tempo.getMinutes()+":"+
+                                                          tempo.getSeconds()+" "+
+                                                          tempo.getMilliseconds() );
+}
+var booleanExampleChgImage = 0;
+function changeImages(image){
+    if (booleanExampleChgImage==0){
+        image.setImageArray(new Array("iconsEuDock/euDock-red.png",
+                                      "iconsEuDock/euDock-gold.png",
+                                      "iconsEuDock/euDock-green.png",
+                                      "iconsEuDock/euDock-blue.png",
+                                      "iconsEuDock/euDock-purple.png" ));
+        image.setFadingSteps(15);
+        image.setFadingType('opaque');
+    }else if (booleanExampleChgImage==1){
+        image.setImageArray(new Array("iconsEuDock/euDock-red.png",
+                                      "iconsEuDock/E.png" ));
+        image.setFadingSteps(10);
+        image.setFadingType('fixed');
+    }else{
+        image.setImageArray(new Array("iconsEuDock/euDock-red.png",
+                                      "iconsEuDock/E.png",
+                                      "iconsEuDock/u.png",
+                                      "iconsEuDock/D.png",
+                                      "iconsEuDock/o.png",
+                                      "iconsEuDock/c.png",
+                                      "iconsEuDock/k.png",
+                                      "iconsEuDock/euDock-brown.png" ));
+        image.setFadingSteps(100);
+        image.setFadingType('transparent');
+    }
+    booleanExampleChgImage = (booleanExampleChgImage+1)%3;
+    tempo = new Date();
+    document.getElementById('timeMouseClick').innerHTML=(tempo.getHours()+":"+
+                                                          tempo.getMinutes()+":"+
+                                                          tempo.getSeconds()+" "+
+                                                          tempo.getMilliseconds() );
+}
+
+</script>
+
+
+<script>
+euBarDef("images/dockBg-l.png","images/dockBg-c-o.gif","images/dockBg-r.png",1,0);
+
+var icon1 = addEuImgArray(new Array("iconsEuDock/euDock-red.png",
+                                    "iconsEuDock/E.png",
+                                    "iconsEuDock/u.png",
+                                    "iconsEuDock/D.png",
+                                    "iconsEuDock/o.png",
+                                    "iconsEuDock/c.png",
+                                    "iconsEuDock/k.png",
+                                    "iconsEuDock/euDock-brown.png" ) ,
+                                    "fadingSteps='100' fadingType='transparent'");
+icon1.onChangeImage = "showChangeImages(icon1)";
+icon1.onChangeSize  = "drawSizes(icon1)";
+icon1.onMouseOver   = "showIconState(icon1)";
+icon1.onMouseOut    = "showIconState(icon1)";
+icon1.onMouseClick  = "changeImages(icon1)";
+
+addEuImgArray(new Array("iconsEuDock/euDock-red.png",
+                        "iconsEuDock/E.png" ) ,
+                            "fadingSteps='10' fadingType='fixed'");
+
+addEuImgArray(new Array("iconsEuDock/euDock-red.png",
+                        "iconsEuDock/u.png" ) ,
+                            "fadingSteps='10' fadingType='fixed'");
+
+addEuImgArray(new Array("iconsEuDock/euDock-red.png",
+                        "iconsEuDock/D.png" ) ,
+                            "fadingSteps='10' fadingType='fixed'");
+
+addEuImgArray(new Array("iconsEuDock/euDock-red.png",
+                        "iconsEuDock/o.png" ) ,
+                            "fadingSteps='10' fadingType='fixed'");
+
+addEuImgArray(new Array("iconsEuDock/euDock-red.png",
+                        "iconsEuDock/c.png" ) ,
+                            "fadingSteps='10' fadingType='fixed'");
+
+addEuImgArray(new Array("iconsEuDock/euDock-red.png",
+                        "iconsEuDock/k.png" ) ,
+                            "fadingSteps='10' fadingType='fixed'");
+
+
+addEuImgArray(new Array("iconsEuDock/euDock-red.png",
+                        "iconsEuDock/euDock-gold.png",
+                        "iconsEuDock/euDock-green.png",
+                        "iconsEuDock/euDock-blue.png",
+                        "iconsEuDock/euDock-purple.png" ) ,
+                            "fadingSteps='50' fadingType='opaque'");
+
+addEuImgArray(new Array("iconsEuDock/euDock-red.png",
+                        "iconsEuDock/euDock-gold.png",
+                        "iconsEuDock/euDock-green.png",
+                        "iconsEuDock/euDock-blue.png",
+                        "iconsEuDock/euDock-purple.png" ) ,
+                            "fadingSteps='100' fadingType='transparent'");
+</script>
+

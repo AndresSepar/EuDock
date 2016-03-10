@@ -1,0 +1,777 @@
+<html>
+<head>
+<title>euDock (Dock Bar MAC OS X-Style) in Javascript WOW!!!</title>
+<link type="image/x-icon" href="iconsEuDock/euDock.ico" rel="shortcut icon">
+<script language="JavaScript1.3" src="euDock.js"></script>
+
+<style>
+body,td { color: #000000;font-family:Verdana,Geneva,Helvetica; font-size: 12px; color:#223232;}
+
+.Titolo { font-family: Arial, Verdana, Sans-serif; font-size:20px; font-weight:bolder; }
+.inputText { border-left: 0px none; border-right: 0px none; border-top: 1px solid #8FA6A6; border-bottom: 1px solid #8FA6A6; }
+</style>
+
+</head>
+<body >
+<center>
+<img src=images/logo-big.jpg>
+
+<table border="0" cellspacing="0" cellpadding="0">
+    <tr><td><img src=images/dockBg-l.gif></td>
+    <td background=images/dockBg-c-o.gif class="Titolo">Final euDock properties show (2/2) [PNG]</td>
+    <td><img src=images/dockBg-r.gif></td></tr>
+</table>
+
+<br>
+
+<table border=0 cellspacing=0 cellpadding=0><tr><td valign=top>
+<!--INIZIO Menu laterale -->
+    <script>
+        var booleanBar=true;
+
+        preloadImages(new Array('bottoni/b-1-b-c.jpg','bottoni/b-1-b-l.jpg','bottoni/b-1-b-r.jpg',
+                                'bottoni/b-1-r-c.jpg','bottoni/b-1-r-l.jpg','bottoni/b-1-r-r.jpg',
+                                'bottoni/b-1-g-c.jpg','bottoni/b-1-g-l.jpg','bottoni/b-1-g-r.jpg',
+                                'bottoni/b-1-y-c.jpg','bottoni/b-1-y-l.jpg','bottoni/b-1-y-r.jpg'));
+        function top(){
+            euDockAlign("top");
+            if (booleanBar)
+                euBarDef("images/dockBg-l.gif","images/dockBg-c-o.gif","images/dockBg-r.gif",0,0);
+            else
+                euBarDef("images/formt1l.gif","images/formt1c.gif","images/formt1r.gif",-7,7);
+        }
+        function bottom(){
+            euDockAlign("bottom");
+            if (booleanBar)
+                euBarDef("images/dockBg-l.gif","images/dockBg-c-o.gif","images/dockBg-r.gif",0,0);
+            else
+                euBarDef("images/formt1l.gif","images/formt1c.gif","images/formt1r.gif",-7,7);
+        }
+        function left(){
+            euDockAlign("left");
+            if (booleanBar)
+                euBarDef("images/dockBg-u.gif","images/dockBg-c-v.gif","images/dockBg-d.gif",1,0);
+            else
+                euBarDef("images/formt1l-v.gif","images/formt1c-v.gif","images/formt1r-v.gif",-5,7);
+        }
+        function right(){
+            euDockAlign("right");
+             if (booleanBar)
+                euBarDef("images/dockBg-u.gif","images/dockBg-c-v.gif","images/dockBg-d.gif",1,0);
+            else
+                euBarDef("images/formt1l-v.gif","images/formt1c-v.gif","images/formt1r-v.gif",-5,7);
+
+        }
+        function bar(bool){
+            booleanBar = bool;
+            if (booleanBar)
+                if (getEuDockAlign()=='top' || getEuDockAlign()=='bottom')
+                    euBarDef("images/dockBg-l.gif","images/dockBg-c-o.gif","images/dockBg-r.gif",0,0);
+                else
+                    euBarDef("images/dockBg-u.gif","images/dockBg-c-v.gif","images/dockBg-d.gif",1,0);
+            else
+                if (getEuDockAlign()=='top' || getEuDockAlign()=='bottom')
+                    euBarDef("images/formt1l.gif","images/formt1c.gif","images/formt1r.gif",-7,7);
+                else
+                    euBarDef("images/formt1l-v.gif","images/formt1c-v.gif","images/formt1r-v.gif",-5,7);        }
+    </script>
+
+    <table border=0 cellspacing=0  cellpadding=0><tr><td>
+    <div style="cursor:pointer; background: url('bottoni/b-1-g-c.jpg');"
+    onmouseover="this.style.backgroundImage='url(\'bottoni/b-1-y-c.jpg\')';left1.src='bottoni/b-1-y-l.jpg';right1.src='bottoni/b-1-y-r.jpg'"
+    onmouseout="this.style.backgroundImage='url(\'bottoni/b-1-g-c.jpg\')';left1.src='bottoni/b-1-g-l.jpg';right1.src='bottoni/b-1-g-r.jpg'"
+    onclick="top();">
+    <table border=0 cellspacing=0  cellpadding=0><tr>
+    <td><img src=bottoni/b-1-g-l.jpg name='left1'></td>
+    <td style="font-family:Verdana,Geneva,Helvetica; font-size: 12px; color:#223232;"
+    valign=top><img src=images/x.gif height=7><br><b>On the Top</b></td>
+    <td><img src=bottoni/b-1-g-r.jpg name='right1'></td>
+    </tr></table>
+    </div></td></tr></table>
+
+    <table border=0 cellspacing=0  cellpadding=0><tr><td>
+    <div style="cursor:pointer; background: url('bottoni/b-1-g-c.jpg');"
+    onmouseover="this.style.backgroundImage='url(\'bottoni/b-1-y-c.jpg\')';left2.src='bottoni/b-1-y-l.jpg';right2.src='bottoni/b-1-y-r.jpg'"
+    onmouseout="this.style.backgroundImage='url(\'bottoni/b-1-g-c.jpg\')';left2.src='bottoni/b-1-g-l.jpg';right2.src='bottoni/b-1-g-r.jpg'"
+    onclick="bottom();">
+    <table border=0 cellspacing=0  cellpadding=0><tr>
+    <td><img src=bottoni/b-1-g-l.jpg name='left2'></td>
+    <td style="font-family:Verdana,Geneva,Helvetica; font-size: 12px; color:#223232;"
+    valign=top><img src=images/x.gif height=7><br><b>On the Bottom</b></td>
+    <td><img src=bottoni/b-1-g-r.jpg name='right2'></td>
+    </tr></table>
+    </div></td></tr></table>
+
+    <table border=0 cellspacing=0  cellpadding=0><tr><td>
+    <div style="cursor:pointer; background: url('bottoni/b-1-g-c.jpg');"
+    onmouseover="this.style.backgroundImage='url(\'bottoni/b-1-y-c.jpg\')';left3.src='bottoni/b-1-y-l.jpg';right3.src='bottoni/b-1-y-r.jpg'"
+    onmouseout="this.style.backgroundImage='url(\'bottoni/b-1-g-c.jpg\')';left3.src='bottoni/b-1-g-l.jpg';right3.src='bottoni/b-1-g-r.jpg'"
+    onclick="left();">
+    <table border=0 cellspacing=0  cellpadding=0><tr>
+    <td><img src=bottoni/b-1-g-l.jpg name='left3'></td>
+    <td style="font-family:Verdana,Geneva,Helvetica; font-size: 12px; color:#223232;"
+    valign=top><img src=images/x.gif height=7><br><b>On the Left</b></td>
+    <td><img src=bottoni/b-1-g-r.jpg name='right3'></td>
+    </tr></table>
+    </div></td></tr></table>
+
+    <table border=0 cellspacing=0  cellpadding=0><tr><td>
+    <div style="cursor:pointer; background: url('bottoni/b-1-g-c.jpg');"
+    onmouseover="this.style.backgroundImage='url(\'bottoni/b-1-y-c.jpg\')';left4.src='bottoni/b-1-y-l.jpg';right4.src='bottoni/b-1-y-r.jpg'"
+    onmouseout="this.style.backgroundImage='url(\'bottoni/b-1-g-c.jpg\')';left4.src='bottoni/b-1-g-l.jpg';right4.src='bottoni/b-1-g-r.jpg'"
+    onclick="right();">
+    <table border=0 cellspacing=0  cellpadding=0><tr>
+    <td><img src=bottoni/b-1-g-l.jpg name='left4'></td>
+    <td style="font-family:Verdana,Geneva,Helvetica; font-size: 12px; color:#223232;"
+    valign=top><img src=images/x.gif height=7><br><b>On the Right</b></td>
+    <td><img src=bottoni/b-1-g-r.jpg name='right4'></td>
+    </tr></table>
+    </div></td></tr></table>
+
+    <table border=0 cellspacing=0  cellpadding=0><tr><td>
+    <div style="cursor:pointer; background: url('bottoni/b-1-g-c.jpg');"
+    onmouseover="this.style.backgroundImage='url(\'bottoni/b-1-r-c.jpg\')';left5.src='bottoni/b-1-r-l.jpg';right5.src='bottoni/b-1-r-r.jpg'"
+    onmouseout="this.style.backgroundImage='url(\'bottoni/b-1-g-c.jpg\')';left5.src='bottoni/b-1-g-l.jpg';right5.src='bottoni/b-1-g-r.jpg'"
+    onclick="setEuDockSteps(new Array(0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95,1))">
+    <table border=0 cellspacing=0  cellpadding=0><tr>
+    <td><img src=bottoni/b-1-g-l.jpg name='left5'></td>
+    <td style="font-family:Verdana,Geneva,Helvetica; font-size: 12px; color:#223232;"
+    valign=top><img src=images/x.gif height=7><br><b>KeyframesNEW</b></td>
+    <td><img src=bottoni/b-1-g-r.jpg name='right5'></td>
+    </tr></table>
+    </div></td></tr></table>
+
+    <table border=0 cellspacing=0  cellpadding=0><tr><td>
+    <div style="cursor:pointer; background: url('bottoni/b-1-g-c.jpg');"
+    onmouseover="this.style.backgroundImage='url(\'bottoni/b-1-r-c.jpg\')';left6.src='bottoni/b-1-r-l.jpg';right6.src='bottoni/b-1-r-r.jpg'"
+    onmouseout="this.style.backgroundImage='url(\'bottoni/b-1-g-c.jpg\')';left6.src='bottoni/b-1-g-l.jpg';right6.src='bottoni/b-1-g-r.jpg'"
+    onclick="setEuDockSteps(new Array(0.3,0.4,0.5,0.6,0.7,0.8,0.9,1));">
+    <table border=0 cellspacing=0  cellpadding=0><tr>
+    <td><img src=bottoni/b-1-g-l.jpg name='left6'></td>
+    <td style="font-family:Verdana,Geneva,Helvetica; font-size: 12px; color:#223232;"
+    valign=top><img src=images/x.gif height=7><br><b>KeyframesOLD</b></td>
+    <td><img src=bottoni/b-1-g-r.jpg name='right6'></td>
+    </tr></table>
+    </div></td></tr></table>
+
+    <table border=0 cellspacing=0  cellpadding=0><tr><td>
+    <div style="cursor:pointer; background: url('bottoni/b-1-g-c.jpg');"
+    onmouseover="this.style.backgroundImage='url(\'bottoni/b-1-r-c.jpg\')';left7.src='bottoni/b-1-r-l.jpg';right7.src='bottoni/b-1-r-r.jpg'"
+    onmouseout="this.style.backgroundImage='url(\'bottoni/b-1-g-c.jpg\')';left7.src='bottoni/b-1-g-l.jpg';right7.src='bottoni/b-1-g-r.jpg'"
+    onclick="setEuDockSteps(new Array(0.3,0.27,0.25,0.27,0.3,0.35,0.4,0.5,0.65,0.8,1,1.3,1.2,1.1,1));">
+    <table border=0 cellspacing=0  cellpadding=0><tr>
+    <td><img src=bottoni/b-1-g-l.jpg name='left7'></td>
+    <td style="font-family:Verdana,Geneva,Helvetica; font-size: 12px; color:#223232;"
+    valign=top><img src=images/x.gif height=7><br><b>KeyframesXXX</b></td>
+    <td><img src=bottoni/b-1-g-r.jpg name='right7'></td>
+    </tr></table>
+    </div></td></tr></table>
+
+    <table border=0 cellspacing=0  cellpadding=0><tr><td>
+    <div style="cursor:pointer; background: url('bottoni/b-1-g-c.jpg');"
+    onmouseover="this.style.backgroundImage='url(\'bottoni/b-1-b-c.jpg\')';left8.src='bottoni/b-1-b-l.jpg';right8.src='bottoni/b-1-b-r.jpg'"
+    onmouseout="this.style.backgroundImage='url(\'bottoni/b-1-g-c.jpg\')';left8.src='bottoni/b-1-g-l.jpg';right8.src='bottoni/b-1-g-r.jpg'"
+    onclick="bar(true);">
+    <table border=0 cellspacing=0  cellpadding=0><tr>
+    <td><img src=bottoni/b-1-g-l.jpg name='left8'></td>
+    <td style="font-family:Verdana,Geneva,Helvetica; font-size: 12px; color:#223232;"
+    valign=top><img src=images/x.gif height=7><br><b>ORIGINAL BAR</b></td>
+    <td><img src=bottoni/b-1-g-r.jpg name='right8'></td>
+    </tr></table>
+    </div></td></tr></table>
+
+    <table border=0 cellspacing=0  cellpadding=0><tr><td>
+    <div style="cursor:pointer; background: url('bottoni/b-1-g-c.jpg');"
+    onmouseover="this.style.backgroundImage='url(\'bottoni/b-1-b-c.jpg\')';left9.src='bottoni/b-1-b-l.jpg';right9.src='bottoni/b-1-b-r.jpg'"
+    onmouseout="this.style.backgroundImage='url(\'bottoni/b-1-g-c.jpg\')';left9.src='bottoni/b-1-g-l.jpg';right9.src='bottoni/b-1-g-r.jpg'"
+    onclick="bar(false);">
+    <table border=0 cellspacing=0  cellpadding=0><tr>
+    <td><img src=bottoni/b-1-g-l.jpg name='left9'></td>
+    <td style="font-family:Verdana,Geneva,Helvetica; font-size: 12px; color:#223232;"
+    valign=top><img src=images/x.gif height=7><br><b>NEW BAR</b></td>
+    <td><img src=bottoni/b-1-g-r.jpg name='right9'></td>
+    </tr></table>
+    </div></td></tr></table>
+
+<!--FINE Menu laterale -->
+</td><td>
+<!--INIZIO PARTE CENTRALE -->
+
+<table border=0 cellspacing=0  cellpadding=0>
+    <tr><td width=12><img src=images/formt2l.gif></td>
+    <td background=images/formt1c.gif><Center><b>euDock Specs</b></center></td>
+    <td width=12><img src=images/formt2r.gif></td></tr>
+    <tr><td background=images/forml.gif></td><td>
+
+    <br>
+
+    I hope this is the final Page...<br><br>
+    </td><td background=images/formr.gif></td></tr>
+    <tr><td><img src=images/formt1l.gif></td>
+    <td background=images/formt1c.gif><b><center>!!!INDEX!!!</b></td>
+    <td><img src=images/formt1r.gif></td></tr>
+    <tr><td background=images/forml.gif></td><td>
+    <pre>
+
+    <a href='#euBarDef'      >euBarDef( imageLU , imageC , imageRD , iconsOffset , barOffset);</a>
+
+    <a href='#euDockAlign'   >euDockAlign( align );</a>
+    <a href='#getEuDockAlign'>align = getEuDockAlign();</a>
+
+    <a href='#hookEuPos'     >hookEuPos( posX , posY );</a>
+    <a href='#hookEuDock'    >hookEuDock( idObj , position );</a>
+    <a href='#unHookEuDock'  >unHookEuDock();</a>
+
+    <a href='#setEuDockSteps'>setEuDockSteps( arraySteps );</a>
+    <a href='#getEuDockSteps'>arraySteps = getEuDockSteps();</a>
+
+    <a href='#addEuImg'      >returnObj = addEuImg( image , properties );</a>
+    <a href='#addEuImgArray' >returnObj = addEuImgArray( images , properties );</a>
+
+             <a href='#PARAMETERS' >---PARAMETERS---</a>
+
+    -----------------immaginEu Obj---------------------------------
+
+       <a href='#setImage'      >euImgObj.setImage(img);</a>
+       <a href='#setImageArray' >euImgObj.setImageArray(img);</a>
+       <a href='#getImage'      >img  = euImgObj.getImage();</a>
+       <a href='#getImageArray' >imgs = euImgObj.getImageArray();</a>
+       <a href='#getFadingImage'>img  = euImgObj.getFadingImage();</a>
+
+       <a href='#setWidth'      >euImgObj.setWidth(width);</a>
+       <a href='#setHeight'     >euImgObj.setHeight(height);</a>
+       <a href='#getWidth'      >width  = euImgObj.getWidth();</a>
+       <a href='#getHeight'     >height = euImgObj.getHeight();</a>
+       <a href='#getMaxWidth'   >width  = euImgObj.getMaxWidth();</a>
+       <a href='#getMaxHeight'  >height = euImgObj.getMaxHeight();</a>
+
+    ------------------immaginEu EVENTS------------------------------
+
+          <a href='#setFadingSteps'>euImgObj.setFadingSteps(steps);</a>
+
+          <a href='#onMouseOver'   >euImgObj.setOnMouseOver(js);</a>
+          <a href='#onMouseOver'   >euImgObj.onMouseOver = js;</a>
+
+          <a href='#onMouseOut'    >euImgObj.setOnMouseOut(js);</a>
+          <a href='#onMouseOut'    >euImgObj.onMouseOut = js;</a>
+
+          <a href='#onMouseClick'  >euImgObj.setOnMouseClick(js);</a>
+          <a href='#onMouseClick'  >euImgObj.onMouseClick = js;</a>
+
+          <a href='#onChangeImage' >euImgObj.setOnChangeImage(js);</a>
+          <a href='#onChangeImage' >euImgObj.onChangeImage = js;</a>
+
+          <a href='#onChangeSize'  >euImgObj.setOnChangeSize(js);</a>
+          <a href='#onChangeSize'  >euImgObj.onChangeSize = js;</a>
+
+    ------------------<a href='#END'>END?</a>-----------------------------------------
+    </pre>
+
+    </td><td background=images/formr.gif></td></tr>
+    <tr><td><img src=images/formt1l.gif></td>
+    <td background=images/formt1c.gif><b><center>!!!Other Functions!!!</b></td>
+    <td><img src=images/formt1r.gif></td></tr>
+    <tr><td background=images/forml.gif></td><td>
+
+    <br>
+    <h3>Bar Functions...</h3>
+
+<hr>
+<a name="euBarDef"></a>
+    <tt><b>euBarDef( imageLU , imageC , imageRD , iconsOffset , barOffset);</b></tt>
+    <pre>
+     Defines bar properties or Create a new Bar (if not Exist);
+
+imageLU     : left or up image of the bar (gif,png,jpg,...)
+imageC      : center image of the bar (gif,png,jpg,...)
+imageRD     : right or down image of the bar (gif,png,jpg,...)
+iconsOffset : (numeric) distance (in px) between borderBar and borderImage
+barOffset   : (numeric) distance (in px) between borderWindow and borderBar
+    </pre>
+
+<hr>
+<a name="euDockAlign"></a>
+    <tt><b>euDockAlign( align );</b></tt>
+    <pre>
+     Align Bar and icons;
+
+align       : you can choose between:
+            : 'top'
+            : 'bottom' (default)
+            : 'left'
+            : 'right'
+    </pre>
+<hr>
+<a name="getEuDockAlign"></a>
+    <tt><b>align = getEuDockAlign();</b></tt>
+    <pre>
+     Align Bar and icons;
+
+align       : Alignment
+    </pre>
+<hr>
+<a name="hookEuPos"></a>
+    <tt><b>hookEuPos( posX , posY )</b></tt>
+    <pre>
+     Hook euDock at specified position;
+
+posX        : X position where hook the center of euDock;
+posY        : Y position where hook the center of euDock;
+    </pre>    
+<hr>
+<a name="hookEuDock"></a>
+    <tt><b>hookEuDock( idObj , position )</b></tt>
+    <pre>
+     Hook euDock at specified object;
+
+idObj       : The id of HTML object;
+
+position    : Can assume 4 values:
+            :
+            : 'top'     Place euDock center base to the top corner of the Object
+            : 'bottom'  Place euDock center base to the bottom corner of the Object
+            : 'left'    Place euDock center base to the left corner of the Object
+            : 'right'   Place euDock center base to the right corner of the Object
+            :
+            : I know, it is not immediate (refer to the previous page for examples)
+            : I'm so sorry...
+    </pre>
+<hr>
+<a name="unHookEuDock"></a>
+    <tt><b>unHookEuDock()</b></tt>
+    <pre>
+     UnHook euDock and replace it to the corner of the screen;
+    </pre>
+<hr>
+<a name="setEuDockSteps"></a>
+    <tt><b>setEuDockSteps( arraySteps );</b></tt>
+    <pre>
+     Set the Keyframes of enlarge icon animation
+
+arraySteps  : an array (new Array(values))
+            : Where you define percentage sizes of images
+            : (Array dimension is the number of animation steps)
+
+EXAMPLES:
+setEuDockSteps(new Array(0.3,0.4,0.5,0.6,0.7,0.8,0.9,1));
+   (is the default Array)
+   (in 9 frames the image size pass through 30% to original size(100%))
+   (0.3 == 30% of the original)
+   (1   == 100% of the original)
+
+setEuDockSteps(new Array(0.3,0.27,0.25,0.27,0.3,0.35,0.4,0.5,0.65,0.8,1,1.3,1.2,1.1,1));
+   (in 15 frames the image decrease and increas with COOOOL effect)
+   (press KeyframesXXX button to test it)
+
+NOTE:
+1   == 100% can be (or not to be) the last value or the MAX;
+               ...AND...
+0.3 == 30%  can be (or not to be) the first value or the MIN;
+    </pre>
+<hr>
+<a name="getEuDockSteps"></a>
+    <tt><b>arraySteps = getEuDockSteps();</b></tt>
+    <pre>
+     Align Bar and icons;
+
+arraySteps  : an array (new Array(values))
+            : Where you define percentage sizes of images
+            : (Array dimension is the number of animation steps)
+    </pre>
+
+<hr>
+    <h3>Icon Functions...</h3>
+<hr>
+<a name="addEuImg"></a>
+    <tt><b>returnObj = addEuImg( image , properties );</b></tt>
+    <pre>
+     Add a single image to euDock;
+
+image       : icon (gif,png,jpg,...)
+
+returnObj   : object (immaginEu) returned (immaginEu is descripted later)
+
+properties  : You can specify some parameters for this icon
+            : Properties are the same of the next method
+    </pre>
+
+<hr>
+<a name="addEuImgArray"></a>
+    <tt><b>returnObj = addEuImgArray( images , properties );</b></tt>
+    <pre>
+     Add an images Array to euDock;
+
+images      : =new Array(img1,img2,img...)
+
+returnObj   : object (immaginEu) returned (immaginEu is descripted later)
+<a name="PARAMETERS"></a>
+properties  : You can specify some parameters for this icon:
+            : (NOTE. The parser is not complex so, please, write parameters like this:
+            :  "parameter1='VALUE1' parameter2='VALUE2'"
+            :  without spaces between the character (=) and with (') or (") in Numeric Value too)
+            :
+            :------------------------------------------------------------------------------------
+            :
+            : link='URL'
+            :
+            :       URL = url... Of course...
+            :
+            :------------------------------------------------------------------------------------
+            :
+            : js='javascript'
+            :
+            :     javascript = code to execute when you click the image
+            :
+            :     (NOTE. properties 'js' and 'link' cannot be simultaneously placed
+            :      on the script, js='javascript' overwrite link='url')
+            :
+            :------------------------------------------------------------------------------------
+            :
+            : minWidth='PIXELS'
+            :
+            :           PIXELS = width in (PIXELS) of unselected icon
+            :
+            :------------------------------------------------------------------------------------
+            :
+            : minHeight='PIXELS'
+            :
+            :            PIXELS = height in (PIXELS) of unselected icon
+            :
+            :------------------------------------------------------------------------------------
+            :
+            : maxWidth='PIXELS'
+            :
+            :           PIXELS = width in (PIXELS) of selected icon
+            :
+            :------------------------------------------------------------------------------------
+            :
+            : maxHeight='PIXELS'
+            :
+            :            PIXELS = height in (PIXELS) of selected icon
+            :
+            :    (NOTE: Like (js & link) max parameters owerwrite min parameters)
+            :------------------------------------------------------------------------------------
+            :
+            : fadingSteps='STEPS'
+            :
+            :              STEPS = number of total frames between first and last image
+            :                      (EXAMPLE width 3 images default steps are 5)
+            :                      (EXAMPLE width 8 images default steps are 15)
+            :                      (default steps include at least a frame
+            :                       transition between every image)
+            :
+            :------------------------------------------------------------------------------------
+            :
+            : fadingtype='TYPE'
+            :
+            :             TYPE = transparent
+            :                          (Mathematical interpolation of transition)
+            :                           Background can be a bit visible
+            :
+            :                    opaque
+            :                          (one of the two images used for fading is not transparent)
+            :                           Not Mathematically correct but useful
+            :
+            :                    fixed
+            :                          (It works good only with 2 images)
+            :                           The first is used for fixed Background
+            :                           The second is used over this Background
+            :                           Very Pretty!!!
+            :
+            :--------------------NOTE------------------------------------------------------------
+            : Follow properties are equivalent to use appropriate methods
+            :  EXAMPLE: properties (onMouseOver='JAVASCRIPT')
+            :    OR     imageObj.setOnMouseOver('JAVASCRIPT');
+            :    OR     imageObj.onMouseOver = 'JAVASCRIPT';
+            :        !!!ARE THE SAME THING!!!
+            :--------------------END NOTE--------------------------------------------------------
+            :
+            : onMouseOver='javascript'
+            :
+            :              javascript = code to execute when you are over the image
+            :
+            :------------------------------------------------------------------------------------
+            :
+            : onMouseOut='javascript'
+            :
+            :              javascript = code to execute when you going out the image
+            :
+            :------------------------------------------------------------------------------------
+            :
+            : onMouseClick='javascript'
+            :
+            :              javascript = code to execute when you CLICK over the image
+            :
+            :------------------------------------------------------------------------------------
+            :
+            : onChangeImage='javascript'
+            :
+            :              javascript = code to execute when icon image change
+            :
+            :------------------------------------------------------------------------------------
+            :
+            : onChangeSize='javascript'
+            :
+            :              javascript = code to execute when icon change its size
+            :
+            :------------------------------------------------------------------------------------
+
+EXAMPLES:
+(Parameters in this euDock)
+(ICON NUMBER) "PARAMETERS"
+(1)      "fadingSteps='100' fadingType='transparent'"
+(2)      "fadingSteps='10'  fadingType='fixed' minWidth='40' minHeight='50'     "
+(3)      "fadingSteps='10'  fadingType='fixed' minWidth='50' minHeight='30'     "
+(4)      "fadingSteps='10'  fadingType='fixed' maxWidth='130' maxHeight='200'   "
+(5)      "fadingSteps='10'  fadingType='fixed' js=\"alert('COOOOOOL!!!!!')\"    "
+(6)      "fadingSteps='10'  fadingType='fixed'       link='SimplExample.html'   "
+(7)      "fadingSteps='10'  fadingType='fixed'       link='ComplExperiment.html'"
+(8)      "fadingSteps='50'  fadingType='opaque'      link='MAMMAMIA.html'       "
+(9)      "fadingSteps='100' fadingType='transparent' link='MAMMAMIA2.html'      "
+
+SEE parameter of 5th icon...
+IT is more simple to use the appropriate function
+[like onMouseClick("javascript") in spite of its homonYmous parameter];
+
+    </pre>
+
+<hr>
+    <h3>THE immaginEu OBJECT...</h3>
+<hr>
+Whith methods:<br>
+euImgObj = addEuImg(img,prop);<br>
+euImgObj = addEuImgArray(imgs,prop);<br>
+You get in <b>euImgObj</b> an (immaginEu) Object<p>
+(detailed description of next functions are the same of homonymous icon properties)
+<hr>
+<a name="setImage"></a>
+    <tt><b>euImgObj.setImage(img);</b></tt>
+    <pre>
+     Set a New image
+
+img         : name of the image (gif,png,jpg,...)
+    </pre>
+<hr>
+<a name="getImage"></a>
+    <tt><b>img = euImgObj.getImage();</b></tt>
+    <pre>
+     Get current image shown
+
+img         : name of the current image (gif,png,jpg,...)
+    </pre>
+<hr>
+<a name="setImageArray"></a>
+    <tt><b>euImgObj.setImageArray(imgs);</b></tt>
+    <pre>
+     Set a New array of images
+
+imgs         : Array of Images
+    </pre>
+<hr>
+<a name="getImageArray"></a>
+    <tt><b>imgs = euImgObj.getImageArray();</b></tt>
+    <pre>
+     Get current array of images
+
+imgs         : current array of images
+    </pre>
+
+<hr>
+<a name="getFadinImage"></a>
+    <tt><b>img = euImgObj.getFadinImage();</b></tt>
+    <pre>
+     Get the (FADING TO) image
+
+img         : the (FADING TO) image
+    </pre>
+
+<hr>
+<a name="setWidth"></a>
+    <tt><b>euImgObj.setWidth(width);</b></tt>
+    <pre>
+     Set the Width of the image
+
+width         : the Width of the image
+    </pre>
+
+<hr>
+<a name="setHeight"></a>
+    <tt><b>euImgObj.setHeight(height);</b></tt>
+    <pre>
+     Set the Height of the image
+
+width         : the Height of the image
+    </pre>
+
+<hr>
+<a name="getWidth"></a>
+    <tt><b>width = euImgObj.getWidth();</b></tt>
+    <pre>
+     Get the (CURRENT) Width of the image
+
+width         : the (CURRENT) Width of the image
+    </pre>
+<hr>
+<a name="getHeight"></a>
+    <tt><b>height = euImgObj.getHeight();</b></tt>
+    <pre>
+     Get the (CURRENT) Height of the image
+
+height         : the (CURRENT) Height of the image
+    </pre>
+<hr>
+<a name="getMaxWidth"></a>
+    <tt><b>width = euImgObj.getMaxWidth();</b></tt>
+    <pre>
+     Get the (Final) Width of the image
+
+width         : the (Final) Width of the image
+    </pre>
+<hr>
+<a name="getMaxHeight"></a>
+    <tt><b>height = euImgObj.getMaxHeight();</b></tt>
+    <pre>
+     Get the (Final) Height of the image
+
+height         : the (Final) Height of the image
+    </pre>
+<hr>
+<a name="setFadingSteps"></a>
+    <tt><b>euImgObj.setFadingSteps(steps);</b></tt>
+    <pre>
+     Set the Fading Steps of the image
+
+steps         : the Fading Steps of the image
+    </pre>
+
+<hr>
+<h3>immaginEu EVENTS...</h3>
+<hr>
+For every link type, the two methods descripted are equivalents
+<hr>
+<a name="onMouseOver"></a>
+    <tt><b>euImgObj.setOnMouseOver(js);</b></tt><br>
+    <tt><b>euImgObj.onMouseOver = js;</b></tt>
+    <pre>
+     Link to onMouseOver Event
+
+js         : code to execute
+    </pre>
+
+<hr>
+<a name="onMouseOut"></a>
+    <tt><b>euImgObj.setOnMouseOut(js);</b></tt><br>
+    <tt><b>euImgObj.onMouseOut = js;</b></tt>
+    <pre>
+     Link to onMouseOut Event
+
+js         : code to execute
+    </pre>
+
+<hr>
+<a name="onMouseClick"></a>
+    <tt><b>euImgObj.setOnMouseClick(js);</b></tt><br>
+    <tt><b>euImgObj.onMouseClick = js;</b></tt>
+    <pre>
+     Link to onMouseClick Event
+
+js         : code to execute
+    </pre>
+
+<hr>
+<a name="onChangeImage"></a>
+    <tt><b>euImgObj.setOnChangeImage(js);</b></tt><br>
+    <tt><b>euImgObj.onChangeImage = js;</b></tt>
+    <pre>
+     Link to onChangeImage Event
+
+js         : code to execute
+    </pre>
+
+<hr>
+<a name="onChangeSize"></a>
+    <tt><b>euImgObj.setOnChangeSize(js);</b></tt><br>
+    <tt><b>euImgObj.onChangeSize = js;</b></tt>
+    <pre>
+     Link to onChangeSize Event
+
+js         : code to execute
+    </pre>
+
+<hr>
+
+    </td><td background=images/formr.gif></td></tr>
+    <tr><td><img src=images/formt1l.gif></td>
+    <td background=images/formt1c.gif><b><center>THE END?</b></td>
+    <td><img src=images/formt1r.gif></td></tr>
+    <tr><td background=images/forml.gif></td><td>
+    <br>
+    <a name="END">MAH!!!</a>
+
+
+    </td><td background=images/formr.gif></td></tr>
+    <tr><td width=12><img src=images/formdl.gif></td><td background=images/formd.gif></td><td width=12><img src=images/formdr.gif></td></tr>
+</table>
+<!-- FINE PARTE CENTRALE -->
+</td></tr>
+</table>
+
+</center>
+<a href='http://eudock.jules.it'>
+<img src='littlEuDock.jpg' border=0></a>
+</body>
+</html>
+
+<script>
+euBarDef("images/dockBg-l.gif","images/dockBg-c-o.gif","images/dockBg-r.gif",1,0);
+
+addEuImgArray(new Array("iconsEuDock/euDock-red.gif",
+                                    "iconsEuDock/E.gif",
+                                    "iconsEuDock/u.gif",
+                                    "iconsEuDock/D.gif",
+                                    "iconsEuDock/o.gif",
+                                    "iconsEuDock/c.gif",
+                                    "iconsEuDock/k.gif",
+                                    "iconsEuDock/euDock-brown.gif" ) ,
+                                    "fadingSteps='100' fadingType='transparent'");
+
+addEuImgArray(new Array("iconsEuDock/euDock-red.gif",
+                        "iconsEuDock/E.gif" ) ,
+                            "fadingSteps='10' fadingType='fixed' minWidth='40' minHeight='50'");
+
+addEuImgArray(new Array("iconsEuDock/euDock-red.gif",
+                        "iconsEuDock/u.gif" ) ,
+                            "fadingSteps='10' fadingType='fixed' minWidth='50' minHeight='30'");
+
+addEuImgArray(new Array("iconsEuDock/euDock-red.gif",
+                        "iconsEuDock/D.gif" ) ,
+                            "fadingSteps='10' fadingType='fixed' maxWidth='130' maxHeight='200'");
+
+addEuImgArray(new Array("iconsEuDock/euDock-red.gif",
+                        "iconsEuDock/o.gif" ) ,
+                            "fadingSteps='10'  fadingType='fixed' js=\"alert('COOOOOOL!!!!!')\"    ");
+
+addEuImgArray(new Array("iconsEuDock/euDock-red.gif",
+                        "iconsEuDock/c.gif" ) ,
+                            "fadingSteps='10'  fadingType='fixed'       link='SimplExample.html'   ");
+
+addEuImgArray(new Array("iconsEuDock/euDock-red.gif",
+                        "iconsEuDock/k.gif" ) ,
+                            "fadingSteps='10'  fadingType='fixed'       link='ComplExperiment.html'");
+
+
+addEuImgArray(new Array("iconsEuDock/euDock-red.gif",
+                        "iconsEuDock/euDock-gold.gif",
+                        "iconsEuDock/euDock-green.gif",
+                        "iconsEuDock/euDock-blue.gif",
+                        "iconsEuDock/euDock-purple.gif" ) ,
+                            "fadingSteps='50'  fadingType='opaque'      link='MAMMAMIA.html'       ");
+
+addEuImgArray(new Array("iconsEuDock/euDock-red.gif",
+                        "iconsEuDock/euDock-gold.gif",
+                        "iconsEuDock/euDock-green.gif",
+                        "iconsEuDock/euDock-blue.gif",
+                        "iconsEuDock/euDock-purple.gif" ) ,
+                            "fadingSteps='100' fadingType='transparent' link='MAMMAMIA2.html'      ");
+</script>
+
